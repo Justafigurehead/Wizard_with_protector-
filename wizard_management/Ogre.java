@@ -7,7 +7,8 @@ public class Ogre extends MythicalBeast implements Protector{
     super(name);
   }
 
-  public String defend(){
+
+  public String protect(){
     return "Shield block!";
   }
 }

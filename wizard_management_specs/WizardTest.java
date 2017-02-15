@@ -8,6 +8,7 @@ public class WizardTest {
   Wizard wizard;
   Broomstick broomstick;
   Dragon dragon;
+  Ogre ogre;
   
 
   @Before
@@ -15,6 +16,7 @@ public class WizardTest {
     broomstick = new Broomstick("Nimbus", 10);
     wizard = new Wizard("Toby", broomstick, dragon);
     dragon = new Dragon("Smaug");
+    ogre = new Ogre("FistPunchKnuckle");
   }
 
   @Test
@@ -57,4 +59,28 @@ public class WizardTest {
     wizard.setRide(dragon);
     assertEquals("Standing up tall, beating wings, lift off!", wizard.fly());
   }
+
+
+  // @Test 
+  // public void protectorProtects(){
+  //   assertEquals("Flame blast!!!", wizard.defend());
+  // }
+
+  @Test
+  public void protectorProtects(){
+    assertEquals("Shield block!", wizard.defend());
+  }
+
+  // @Test 
+  // public void setProtector(){
+  //   wizard.setProtector(ogre);
+  //   assertEquals("Shield block!", wizard.defend());
+  // }
+  
+  // @Test 
+  // public void setProtectorAgain(){
+  //   Dragon dragonTwo = new Dragon("Bob");
+  //   wizard.setProtector(dragonTwo);
+  //   assertEquals("Flame blast!!!", wizard.defend());
+  // }
 }

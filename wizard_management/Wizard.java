@@ -29,4 +29,12 @@ public class Wizard {
     this.ride = ride;
   }
 
+  public void setProtector(Protector protector){
+    this.protector = protector;
+  }
+
+  public String defend(){
+    return protector.protect();
+  }
+
 }

@@ -12,8 +12,8 @@ public class Dragon extends MythicalBeast implements Flyable, Protector {
     return "Standing up tall, beating wings, lift off!";
   }
 
-  public String defend(){
-    return "Flame blast";
+  public String protect(){
+    return "Flame blast!!!";
   }
 
 }
