@@ -7,13 +7,14 @@ public class WizardTest {
 
   Wizard wizard;
   Broomstick broomstick;
+  Dragon dragon;
   
 
   @Before
   public void before(){
     broomstick = new Broomstick("Nimbus", 10);
-    wizard = new Wizard("Toby", broomstick);
-    
+    wizard = new Wizard("Toby", broomstick, dragon);
+    dragon = new Dragon("Smaug");
   }
 
   @Test
@@ -36,7 +37,7 @@ public class WizardTest {
   public void canFlyDragon(){
 
     Dragon dragon = new Dragon("Smaug");
-    wizard = new Wizard("Ridicully", dragon);
+    wizard = new Wizard("Ridicully", dragon, dragon);
     assertEquals("Standing up tall, beating wings, lift off!", wizard.fly());
   }
 
@@ -44,7 +45,7 @@ public class WizardTest {
   public void canFlyMagicCarpet(){
     
     MagicCarpet magicCarpet = new MagicCarpet("blue");
-    wizard = new Wizard("Mickey", magicCarpet);
+    wizard = new Wizard("Mickey", magicCarpet, dragon);
 
     assertEquals("Hovering up, straightening out, flying off!", wizard.fly());
   }
