@@ -2,8 +2,11 @@ package wizard_management;
 
 public class BanditHenchman extends Bandit{
 
-  public BanditHenchman(String name){
+    int attackpts;
+
+  public BanditHenchman(String name, int attackpts){
     super(name);
+    this.attackpts = attackpts;
   }
 
   public String attack(){
@@ -13,4 +16,12 @@ public class BanditHenchman extends Bandit{
   public String talk(){
     return "Huh?!";
   }
+
+  public void attackDoesDmg(Wizard wizard){
+   talk();
+   int health = wizard.getHealthPts() - attackpts;
+   wizard.setHealthPts(health);
+  }
+
+
 }

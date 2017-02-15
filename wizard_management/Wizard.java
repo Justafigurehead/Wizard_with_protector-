@@ -40,4 +40,12 @@ public class Wizard {
     return protector.protect();
   }
 
+  public int getHealthPts(){
+    return this.healthpts;
+  }
+
+  public void setHealthPts(int healthpts){
+    this.healthpts = healthpts;
+  }
+
 }
