@@ -5,18 +5,20 @@ import wizard_management.*;
 
 public class WizardTest {
 
-  Wizard wizard;
+  
   Broomstick broomstick;
   Dragon dragon;
   Ogre ogre;
+  Wizard wizard;
   
 
   @Before
   public void before(){
     broomstick = new Broomstick("Nimbus", 10);
-    wizard = new Wizard("Toby", broomstick, dragon);
     dragon = new Dragon("Smaug");
     ogre = new Ogre("FistPunchKnuckle");
+    wizard = new Wizard("Toby", broomstick, dragon);
+    
   }
 
   @Test
@@ -61,26 +63,22 @@ public class WizardTest {
   }
 
 
-  // @Test 
-  // public void protectorProtects(){
-  //   assertEquals("Flame blast!!!", wizard.defend());
-  // }
-
-  @Test
+  @Test 
   public void protectorProtects(){
+    assertEquals("Flame blast!!!", wizard.defend());
+  }
+
+
+  @Test 
+  public void setProtector(){
+    wizard.setProtector(ogre);
     assertEquals("Shield block!", wizard.defend());
   }
 
-  // @Test 
-  // public void setProtector(){
-  //   wizard.setProtector(ogre);
-  //   assertEquals("Shield block!", wizard.defend());
-  // }
-  
-  // @Test 
-  // public void setProtectorAgain(){
-  //   Dragon dragonTwo = new Dragon("Bob");
-  //   wizard.setProtector(dragonTwo);
-  //   assertEquals("Flame blast!!!", wizard.defend());
-  // }
+  @Test 
+  public void setProtectorAgain(){
+    Dragon dragonTwo = new Dragon("Bob");
+    wizard.setProtector(dragonTwo);
+    assertEquals("Flame blast!!!", wizard.defend());
+  }
 }
